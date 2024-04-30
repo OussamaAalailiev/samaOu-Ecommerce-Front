@@ -2,7 +2,9 @@
   width: 4rem;
   background-color: #f8f9fa;
 }
-
+/* ************************************** */
+/* **** Mobile Screen 'Search Input' ****** */
+/* ************************************** */
 @media (min-width: 360px) {
   .display-inputSearch-md-sm {
     display: block;
@@ -15,25 +17,8 @@
   .mySearch-lg-md {
     display: none;
   }
-  /* .mySearch-lg-md {
-    display: none;
-    width: 70%;
-    margin: 0 auto;
-  } */
 }
-/******* Medium Screens ******* */
-/*******************************/
-/* @media (max-width: 991px) {
-  app-search-input {
-    display: none;
-  }
-  nav + app-search-input {
-    display: block;
-    width: 70%;
-    margin: 0 auto;
-  }
-} */
-/******* Large Screens ******* */
+/******* Large Screens 'Search Input' ******* */
 /*******************************/
 @media (min-width: 992px) {
   .mySearch-lg-md {

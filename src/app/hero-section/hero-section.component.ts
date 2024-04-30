@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchInputComponent } from '../search-input/search-input.component';
+import { CategoriesContainerComponent } from '../categories-container/categories-container.component';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [SearchInputComponent],
+  imports: [SearchInputComponent, CategoriesContainerComponent],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.css',
 })
