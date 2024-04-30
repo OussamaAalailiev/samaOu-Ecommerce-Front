@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/*
+MAIN Color: #4dabf7
+Text and grey Color: #343a40
+*/
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  /* width: 95%;
+  margin: 0 auto; */
+  line-height: 1.5;
+  text-align: justify;
+  /* background-color: #dee2e6; */
+  background-color: #f1f3f5;
+}

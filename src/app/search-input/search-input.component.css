@@ -1,0 +1,77 @@
+/* Search Input */
+form {
+  position: relative;
+}
+
+/* ********** Tablette / Medium Screens. ********* */
+/* *********************************** */
+@media (min-width: 360px) and (max-width: 991px) {
+  .input-search {
+    padding: 0.7rem;
+    width: 92%;
+    border: none;
+    border-radius: 20px;
+    border: 2px solid grey;
+    height: 2.5rem;
+  }
+  .search-btn {
+    padding: 0.75rem;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border: 1.5px solid grey;
+    position: absolute;
+    background-color: #ffd43b;
+    top: 0;
+    right: 1.5rem;
+    height: 2.5rem;
+  }
+  .myIcon {
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+  }
+  form {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+/* @media (min-width: 360px) and (max-width: 991px) {
+  form {
+    display: none;
+  }
+} */
+
+/* ********** Large Screens. ********* */
+/* *********************************** */
+@media (min-width: 992px) {
+  .input-search {
+    padding: 0.7rem;
+    width: 90%;
+    /* width: 30rem; */
+    border: none;
+    border-radius: 20px;
+    border: 2px solid grey;
+    height: 2.5rem;
+  }
+  .search-btn {
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    width: 10%;
+    border: 1.5px solid grey;
+    position: absolute;
+    background-color: #ffd43b;
+    top: 0;
+    right: 1rem;
+  }
+  form {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
