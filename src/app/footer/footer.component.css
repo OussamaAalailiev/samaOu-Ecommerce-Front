@@ -1,0 +1,27 @@
+.grid-4-col {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.list--items {
+  list-style: none;
+}
+.myLink-a-item:link,
+.myLink-a-item:visited {
+  text-decoration: none;
+  color: inherit;
+}
+.myLink-a-item:hover,
+.myLink-a-item:active {
+  color: burlywood;
+  text-decoration: underline;
+}
+@media (min-width: 360px) and (max-width: 575px) {
+  .grid-4-col {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+}

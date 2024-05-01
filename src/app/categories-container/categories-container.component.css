@@ -14,7 +14,7 @@ section .card {
 }
 .cardImage {
   width: 100%;
-  height: 30vh;
+  /* height: 30vh; */
 }
 .cardTitle {
   text-align: start;
@@ -30,11 +30,19 @@ section .card {
   text-decoration: underline;
   color: orange;
 }
+.bottom--start {
+  left: 0.5rem;
+  bottom: 0.5rem;
+}
+.bottom--end {
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
 
 /* ******************************** */
 /* ******** Mobile Screen ******* */
 /* ******************************** */
-@media (min-width: 360px) and (max-width: 767px) {
+@media (min-width: 360px) and (max-width: 575px) {
   .grid-4-col {
     padding: 1rem;
     grid-template-columns: repeat(1, 1fr);
@@ -42,13 +50,14 @@ section .card {
   }
   .cardImage {
     width: 100%;
-    height: 50vh;
+    height: auto;
+    /* height: 50vh; */
   }
 }
 /* ******************************** */
 /* ******** Tablette Screen ******* */
 /* ******************************** */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .grid-4-col {
     padding: 1rem;
     grid-template-columns: repeat(2, 1fr);
@@ -56,6 +65,7 @@ section .card {
   }
   .cardImage {
     width: 100%;
-    height: 50vh;
+    height: auto;
+    /* height: 50vh; */
   }
 }
