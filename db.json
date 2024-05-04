@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "title": "Delicious Food",
+      "image": "../assets/food.jpg",
+      "description": "La fraîcheur de la viande et légumes croquants!",
+      "promotion": 35
+    },
+    {
+      "title": "PC & Laptop",
+      "image": "../assets/PC.jpg",
+      "description": "Un ordinateur performant",
+      "promotion": 15
+    },
+    {
+      "title": "Cuisine",
+      "image": "../assets/cuisine 2 edited.jpg",
+      "description": "Une cuisine moderne et fonctionnelle, équipée d'appareils pour faciliter la préparation des repas.",
+      "promotion": 20
+    },
+    {
+      "title": "Soins de santé et beauté",
+      "image": "../assets/health-care.jpg",
+      "description": "Un ensemble de services médicaux, préventifs et curatifs",
+      "promotion": 10
+    },
+    {
+      "title": "Jeux enfant",
+      "image": "../assets/jeux enfants edited.jpg",
+      "description": "Des jeux enfants qui sont des trésors de connaissances, d'évasion et d'inspiration",
+      "promotion": 35
+    },
+    {
+      "title": "Gaming",
+      "image": "../assets/Gaming edited.jpg",
+      "description": "Matériel éléctroniques des jeux pour vivre des expériences ludiques et stimulantes.",
+      "promotion": 15
+    },
+    {
+      "title": "Vêtement Femme / Enfant",
+      "image": "../assets/vêtement femme edited.jpg",
+      "description": "Vêtements offrant confort, élégance et adaptabilité pour toutes les occasions.",
+      "promotion": 20
+    },
+    {
+      "title": "Fournitures Scolaires",
+      "image": "../assets/fournitures scolaire 2.jpg",
+      "description": "Outils essentiels tels que des cahiers, des stylos, des crayons ...",
+      "promotion": 10
+    }
+  ]
+}

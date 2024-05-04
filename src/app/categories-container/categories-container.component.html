@@ -1,6 +1,25 @@
 <section class="categories mt-5">
   <h2 class="ms-3 mt-3 p-2 bg-light text-dark fw-bold">Nos Catégories</h2>
   <section class="grid-4-col">
+    <section *ngFor="let category of categories" class="card position-relative">
+      <p class="cardTitle">{{ category.title }}</p>
+      <img class="cardImage" src="{{ category.image }}" alt="food image" />
+      <div class="">
+        <p class="card-text mt-1 mb-4">
+          {{ category.description }}
+        </p>
+        <div class="d-flex justify-content-between">
+          <a href="#" class="d-block myLink-a position-absolute bottom--start"
+            >See more</a
+          >
+          <span
+            class="card-text mt-1 fw-bold badge text-bg-danger position-absolute bottom--end"
+            >{{ category.promotion }}% Off!</span
+          >
+        </div>
+      </div>
+    </section>
+    <!-- 
     <section class="card position-relative">
       <p class="cardTitle">Delicious Food</p>
       <img class="cardImage" src="./../../assets/food.jpg" alt="food image" />
@@ -59,7 +78,7 @@
       </div>
     </section>
     <section class="card position-relative">
-      <p class="cardTitle">Health care & Beauty</p>
+      <p class="cardTitle">Soins de santé et beauté</p>
       <img
         class="cardImage"
         src="./../../assets/health-care.jpg"
@@ -80,29 +99,7 @@
         </div>
       </div>
     </section>
-    <!-- <section class="card position-relative">
-      <p class="cardTitle">Books</p>
-      <img
-        class="cardImage"
-        src="./../../assets/Books edited.jpg"
-        alt="Books image"
-      />
-      <div class="">
-        <p class="card-text mt-1 mb-4">
-          Des livres qui sont des trésors de connaissances, d'évasion et
-          d'inspiration
-        </p>
-        <div class="d-flex justify-content-between">
-          <a href="#" class="d-block myLink-a position-absolute bottom--start"
-            >See more</a
-          >
-          <span
-            class="card-text mt-1 fw-bold badge text-bg-danger position-absolute bottom--end"
-            >35% Off!</span
-          >
-        </div>
-      </div>
-    </section> -->
+
     <section class="card position-relative">
       <p class="cardTitle">Jeux enfant</p>
       <img
@@ -193,7 +190,7 @@
           >
         </div>
       </div>
-    </section>
+    </section> -->
   </section>
 </section>
 <app-best-selling-products></app-best-selling-products>
