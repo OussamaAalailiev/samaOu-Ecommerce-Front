@@ -5,11 +5,12 @@ import { Category } from '../model/category';
 import { NgFor } from '@angular/common';
 import { Observable } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-categories-container',
   standalone: true,
-  imports: [BestSellingProductsComponent, NgFor],
+  imports: [BestSellingProductsComponent, NgFor, RouterLink],
   providers: [HttpClientModule],
   templateUrl: './categories-container.component.html',
   styleUrl: './categories-container.component.css',
