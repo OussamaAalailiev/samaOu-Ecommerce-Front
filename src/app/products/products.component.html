@@ -1,1 +1,163 @@
-<p>products works!</p>
+<section class="products">
+  <div class="row container-fluid pt-3 pb-3">
+    <div class="col-sm-2">
+      <!-- <ul class="list-unstyled">
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+        <li>sqdgfqsgd</li>
+      </ul> -->
+    </div>
+    <div class="row flex-column col-sm-10">
+      <p class="fs-4 fw-bold">Results :</p>
+      <div class="card mb-3" *ngFor="let product of products">
+        <div class="row g-0">
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <a href="#">
+              <img
+                href="#"
+                [src]="product.imageFileName"
+                class="img-fluid card-img w-100"
+                alt="..."
+              />
+            </a>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-8">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Card title</h5> -->
+              <div class="card-text">
+                <p style="margin-bottom: -0rem" class="text-truncate fw-bold">
+                  {{ product.description }}
+                </p>
+                <div class="d-flex justify-content-start mt-2 mb-0">
+                  <p-rating
+                    class="align-self-center"
+                    [(ngModel)]="value"
+                    [cancel]="false"
+                  />
+                  <!-- pi-chevron-down -->
+                  <i
+                    class="pi pi-chevron-down ms-2 align-self-center"
+                    style="font-size: 0.75rem"
+                  ></i>
+                  <p class="align-self-center ms-1 mb-2">
+                    {{ 4545 }}
+                  </p>
+                </div>
+                <p class="m-0">
+                  <small class="text-muted">3k+ bought in last month</small>
+                </p>
+                <!-- Price -->
+                <div
+                  class="d-sm-block d-lg-flex flex-lg-row justify-content-lg-between align-items-lg-center d-xl-block"
+                >
+                  <div class="d-flex justify-content-start">
+                    <p class="me-2 fw-bold">
+                      {{ product.price | currency : "EUR" : true }}
+                    </p>
+                    <p class="text-decoration-line-through">
+                      {{ product.price - 100 | currency : "EUR" : true }}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-warning flex-lg-grow-0"
+                    style="border-radius: 1.5rem; font-size: 0.8rem"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+              <!-- <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-sm-4">
+            <a href="#">
+              <img
+                src="../../assets/food.jpg"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </a>
+          </div>
+          <div class="col-sm-8">
+            <div class="card-body">
+              <div class="card-text">
+                <p style="margin-bottom: -0rem">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+                <p class="m-0">
+                  <small class="text-muted">3k+ bought in last month</small>
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  style="border-radius: 1.5rem; font-size: 0.8rem"
+                >
+                  Add to cart
+                </button>
+              </div>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-sm-4">
+            <a href="#">
+              <img
+                src="../../assets/food.jpg"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </a>
+          </div>
+          <div class="col-sm-8">
+            <div class="card-body">
+              <div class="card-text">
+                <p style="margin-bottom: -0rem">
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+                <p class="m-0">
+                  <small class="text-muted">3k+ bought in last month</small>
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  style="border-radius: 1.5rem; font-size: 0.8rem"
+                >
+                  Add to cart
+                </button>
+              </div>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>

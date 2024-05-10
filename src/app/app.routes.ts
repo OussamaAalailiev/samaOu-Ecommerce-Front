@@ -3,6 +3,7 @@ import { ProductsComponent } from './products/products.component';
 import { AppComponent } from './app.component';
 import { CategoriesContainerComponent } from './categories-container/categories-container.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -13,7 +14,7 @@ export const routes: Routes = [
     path: 'categories',
     component: CategoriesContainerComponent,
   },
-  { path: 'products', component: ProductsComponent },
-
+  { path: 'products/:categoryId', component: ProductsComponent },
+  { path: '**', component: NotFoundComponent },
   /* { path: 'products', component: ProductsComponent }, */
 ];

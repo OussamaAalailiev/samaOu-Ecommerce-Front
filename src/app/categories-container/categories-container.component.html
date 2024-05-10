@@ -10,7 +10,7 @@
         </p>
         <div class="d-flex justify-content-between">
           <a
-            routerLink="products"
+            [routerLink]="['/products', category.id]"
             class="d-block myLink-a position-absolute bottom--start"
             >See more</a
           >

@@ -1,52 +1,164 @@
 {
   "categories": [
     {
+      "id": 1,
       "title": "Delicious Food",
       "image": "../assets/food.jpg",
       "description": "La fraîcheur de la viande et légumes croquants!",
       "promotion": 35
     },
     {
+      "id": 2,
       "title": "PC & Laptop",
       "image": "../assets/PC.jpg",
       "description": "Un ordinateur performant",
       "promotion": 15
     },
     {
+      "id": 3,
       "title": "Cuisine",
       "image": "../assets/cuisine 2 edited.jpg",
       "description": "Une cuisine moderne et fonctionnelle, équipée d'appareils pour faciliter la préparation des repas.",
       "promotion": 20
     },
     {
+      "id": 4,
       "title": "Soins de santé et beauté",
       "image": "../assets/health-care.jpg",
       "description": "Un ensemble de services médicaux, préventifs et curatifs",
       "promotion": 10
     },
     {
+      "id": 5,
       "title": "Jeux enfant",
       "image": "../assets/jeux enfants edited.jpg",
       "description": "Des jeux enfants qui sont des trésors de connaissances, d'évasion et d'inspiration",
       "promotion": 35
     },
     {
+      "id": 6,
       "title": "Gaming",
       "image": "../assets/Gaming edited.jpg",
       "description": "Matériel éléctroniques des jeux pour vivre des expériences ludiques et stimulantes.",
       "promotion": 15
     },
     {
+      "id": 7,
       "title": "Vêtement Femme / Enfant",
       "image": "../assets/vêtement femme edited.jpg",
       "description": "Vêtements offrant confort, élégance et adaptabilité pour toutes les occasions.",
       "promotion": 20
     },
     {
+      "id": 8,
       "title": "Fournitures Scolaires",
       "image": "../assets/fournitures scolaire 2.jpg",
       "description": "Outils essentiels tels que des cahiers, des stylos, des crayons ...",
       "promotion": 10
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "price": 3.0,
+      "quantity": 110,
+      "rating": 4.5,
+      "name": "Fish",
+      "description": "Very taste and delecious Fish",
+      "available": true,
+      "imageFileName": "../assets/products-food/fish.jpeg",
+      "category": {
+        "id": 1,
+        "title": "Food",
+        "image": "../assets/food.jpg",
+        "description": "La fraîcheur de la viande et légumes croquants!",
+        "promotion": 35
+      }
+    },
+    {
+      "id": 2,
+      "price": 110.0,
+      "quantity": 500,
+      "rating": 5,
+      "name": "Meat",
+      "description": "Delecious Meat",
+      "available": true,
+      "imageFileName": "../assets/products-food/meat.jpeg",
+      "category": {
+        "id": 1,
+        "title": "Food",
+        "image": "../assets/food.jpg",
+        "description": "La fraîcheur de la viande et légumes croquants!",
+        "promotion": 35
+      }
+    },
+    {
+      "id": 3,
+      "price": 90.0,
+      "quantity": 350,
+      "rating": 4,
+      "name": "Arabica coffee beans",
+      "description": "Taste Arabica coffee beans",
+      "available": true,
+      "imageFileName": "../assets/products-food/coffee beans.jpeg",
+      "category": {
+        "id": 1,
+        "title": "Food",
+        "image": "../assets/food.jpg",
+        "description": "La fraîcheur de la viande et légumes croquants!",
+        "promotion": 35
+      }
+    },
+    {
+      "id": 4,
+      "price": 3500.0,
+      "quantity": 700,
+      "rating": 5,
+      "name": "7wala",
+      "description": "7wala from Broj",
+      "available": true,
+      "imageFileName": "../assets/products-food/7wala edited.jpg",
+      "category": {
+        "id": 1,
+        "title": "Food",
+        "image": "../assets/food.jpg",
+        "description": "La fraîcheur de la viande et légumes croquants!",
+        "promotion": 35
+      }
+    },
+    {
+      "id": 5,
+      "price": 95.0,
+      "quantity": 99,
+      "rating": 5,
+      "name": "Fromage Rouge",
+      "description": "Fromage Rouge from Mol hri",
+      "available": true,
+      "imageFileName": "../assets/products-food/fromage rouge.webp",
+      "category": {
+        "id": 1,
+        "title": "Food",
+        "image": "../assets/food.jpg",
+        "description": "La fraîcheur de la viande et légumes croquants!",
+        "promotion": 35
+      }
+    },
+    {
+      "id": 6,
+      "price": 3.0,
+      "quantity": 0,
+      "rating": 5,
+      "name": "Perle",
+      "description": "Fromage Perle from Mol hri",
+      "available": false,
+      "imageFileName": "../assets/products-food/fromage blanc.webp",
+      "category": {
+        "id": 1,
+        "title": "Food",
+        "image": "../assets/food.jpg",
+        "description": "La fraîcheur de la viande et légumes croquants!",
+        "promotion": 35
+      }
     }
   ]
 }
