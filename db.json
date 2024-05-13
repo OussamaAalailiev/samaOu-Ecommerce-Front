@@ -64,7 +64,7 @@
       "quantity": 110,
       "rating": 4.5,
       "name": "Fish",
-      "description": "Very taste and delecious Fish",
+      "description": "Poisson frais de mer, bar de ligne, prêt pour la cuisson !",
       "available": true,
       "imageFileName": "../assets/products-food/fish.jpeg",
       "category": {
@@ -79,9 +79,9 @@
       "id": 2,
       "price": 110.0,
       "quantity": 500,
-      "rating": 5,
+      "rating": 4,
       "name": "Meat",
-      "description": "Delecious Meat",
+      "description": "Viande de bœuf élevé en pâturage, tendre et juteuse, idéale pour grillades et rôtis.",
       "available": true,
       "imageFileName": "../assets/products-food/meat.jpeg",
       "category": {
@@ -96,9 +96,9 @@
       "id": 3,
       "price": 90.0,
       "quantity": 350,
-      "rating": 4,
+      "rating": 5,
       "name": "Arabica coffee beans",
-      "description": "Taste Arabica coffee beans",
+      "description": "Grains de café arabica biologique, torréfaction moyenne, arômes riches et notes douces de cacao.",
       "available": true,
       "imageFileName": "../assets/products-food/coffee beans.jpeg",
       "category": {
@@ -115,7 +115,7 @@
       "quantity": 700,
       "rating": 5,
       "name": "7wala",
-      "description": "7wala from Broj",
+      "description": "Moutons marocains de race pure, élevés en plein air, viande tendre et savoureuse, parfaits pour l'Aïd al-Adha.",
       "available": true,
       "imageFileName": "../assets/products-food/7wala edited.jpg",
       "category": {
@@ -132,7 +132,7 @@
       "quantity": 99,
       "rating": 5,
       "name": "Fromage Rouge",
-      "description": "Fromage Rouge from Mol hri",
+      "description": "Fromage rouge artisanal, affiné avec soin, saveur audacieuse et texture crémeuse, parfait pour les amateurs de fromages forts.",
       "available": true,
       "imageFileName": "../assets/products-food/fromage rouge.webp",
       "category": {
@@ -149,7 +149,7 @@
       "quantity": 0,
       "rating": 5,
       "name": "Perle",
-      "description": "Fromage Perle from Mol hri",
+      "description": "Fromage blanc frais, onctueux et léger, idéal pour accompagner vos plats salés ou sucrés.",
       "available": false,
       "imageFileName": "../assets/products-food/fromage blanc.webp",
       "category": {

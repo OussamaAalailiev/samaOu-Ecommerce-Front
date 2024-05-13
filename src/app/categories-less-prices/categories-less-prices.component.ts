@@ -4,11 +4,12 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { Product } from './Product';
 import { ProductService } from './cat-less-prices.service';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-categories-less-prices',
   standalone: true,
-  imports: [ButtonModule, CarouselModule, TagModule],
+  imports: [ButtonModule, CarouselModule, TagModule, CurrencyPipe],
   templateUrl: './categories-less-prices.component.html',
   styleUrl: './categories-less-prices.component.css',
 })

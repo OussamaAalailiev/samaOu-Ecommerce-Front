@@ -17,9 +17,10 @@ import { CommonModule, NgFor } from '@angular/common';
 export class ProductsComponent implements OnInit {
   /* for initialization tasks when the component is created. */
   products!: Product[] | undefined;
-  value!: number;
+  /* value!: number; */ /* Rating value. */
   price: number = 151351;
   categoryIdFromRoute: number | undefined;
+  numberOfRatings: number = Math.floor(Math.random() * 5000);
 
   ngOnInit(): void {
     //categoryId.
