@@ -36,6 +36,6 @@ export class SignupComponent {
   ) {}
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close('Pizza');
   }
 }

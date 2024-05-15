@@ -15,6 +15,7 @@ export interface Product {
   id: number;
   price: number;
   quantity: number;
+  quantityOrdered?: number;
   taxe?: number;
   rating: number;
   name: string;

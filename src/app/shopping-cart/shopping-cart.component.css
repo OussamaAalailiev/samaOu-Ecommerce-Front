@@ -1,0 +1,41 @@
+.shopping--card--checkbox {
+  align-self: center;
+  width: fit-content;
+}
+.add--decrease--btn {
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid rgb(146, 145, 143);
+  border-radius: 0.5rem;
+  padding-top: 0.75rem;
+}
+.decrease--btn {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+.add--btn {
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.quantity--num {
+  border-top: 1px solid rgb(146, 145, 143);
+  border-bottom: 1px solid rgb(146, 145, 143);
+  padding: 0.5rem;
+  margin-bottom: 0;
+  /* margin-left: 0.5rem;
+  margin-right: 0.5rem;*/
+}
+.disabled--add--decrease {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+/* .select--all:link,
+.select--all:visited {
+  cursor: pointer;
+  pointer-events: auto;
+} */

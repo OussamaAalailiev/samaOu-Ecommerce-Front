@@ -5,6 +5,7 @@ import { CategoriesContainerComponent } from './categories-container/categories-
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SignupComponent } from './signup/signup.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,7 @@ export const routes: Routes = [
     component: CategoriesContainerComponent,
   },
   { path: 'products/:categoryId', component: ProductsComponent },
+  { path: 'shoppingCart', component: ShoppingCartComponent },
   { path: '**', component: NotFoundComponent },
   /* { path: 'products', component: ProductsComponent }, */
 ];

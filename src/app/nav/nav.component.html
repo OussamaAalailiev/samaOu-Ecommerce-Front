@@ -42,10 +42,12 @@
       ></app-search-input>
 
       <!-- <span class="navbar-text"> Navbar text with an inline element </span> -->
-      <a class="nav-link justify-content-end" href="#">
+      <a class="nav-link justify-content-end" [routerLink]="['shoppingCart']">
         <div class="d-flex align-items-center" style="margin-left: -0.4rem">
           <div class="d-flex flex-column align-items-center">
-            <p class="text-danger" style="margin: -0.4rem">0</p>
+            <p class="text-danger" style="margin: -0.4rem">
+              {{ totalCardItems }}
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -59,7 +61,7 @@
               />
             </svg>
           </div>
-          <a href="#" class="nav-link">Cart</a>
+          <a class="nav-link">Cart</a>
         </div>
       </a>
       <a href="#" class="nav-link ms-lg-3">Login</a>

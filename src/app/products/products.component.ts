@@ -6,6 +6,7 @@ import { ProductService } from '../services/product-service/product.service';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
+import { ShoppingCartService } from '../services/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'app-products',
@@ -45,6 +46,11 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private shoppingCartService: ShoppingCartService
   ) {}
+
+  addProductToCart(product: Product) {
+    this.shoppingCartService.addItemToCart(product);
+  }
 }

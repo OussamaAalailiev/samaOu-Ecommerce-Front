@@ -75,6 +75,7 @@
                     type="button"
                     class="btn btn-warning flex-lg-grow-0"
                     style="border-radius: 1.5rem; font-size: 0.8rem"
+                    (click)="addProductToCart(product)"
                   >
                     Add to cart
                   </button>
@@ -165,5 +166,7 @@
   </div>
 </section>
 <ng-template #noData>
-  <p class="text-danger fw-bold text-center p-5">No Products was found!</p>
+  <p style="height: 80vh" class="text-danger fw-bold text-center p-5">
+    No Products was found!
+  </p>
 </ng-template>
