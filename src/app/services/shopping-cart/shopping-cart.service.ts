@@ -20,4 +20,8 @@ export class ShoppingCartService {
     console.log(product);
     console.log(this.products);
   }
+  addItemsToCart(products: Product[]) {
+    this.products = products;
+    this.subjectProducts.next(this.products);
+  }
 }

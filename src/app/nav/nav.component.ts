@@ -45,15 +45,9 @@ export class NavComponent implements OnInit {
   /* ERROR Should be resolved on Cart nav total items */
   ngOnInit(): void {
     this.shoppingCardService.subjectProducts.subscribe((data) => {
-      if (data.length > 0 && data.length <= 1) {
-        data.map((prod) => {
-          this.totalCardItems = prod.quantityOrdered;
-          return prod.quantityOrdered;
-        });
-      } else if (data.length > 1) {
-        data
+      if (data.length > 0) {
+        this.totalCardItems = data
           .map((prod) => {
-            this.totalCardItems = prod.quantityOrdered;
             return prod.quantityOrdered;
           })
           .reduce((prevValue, nextValue) => prevValue! + nextValue!);

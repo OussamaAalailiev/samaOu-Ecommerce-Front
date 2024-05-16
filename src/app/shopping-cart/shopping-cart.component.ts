@@ -13,7 +13,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrl: './shopping-cart.component.css',
 })
 export class ShoppingCartComponent implements OnInit {
-  total: number = 0;
+  total: number | undefined = 0;
   subTotal: number = 0;
   products: Product[] | undefined;
   selectedItems: boolean = true;
@@ -31,13 +31,17 @@ export class ShoppingCartComponent implements OnInit {
       this.products = data;
       console.log('data: ', data);
       if (data.length > 0) {
-        this.total = this.products
-          .map((prod) => prod.price)
-          .reduce((prevPrice, nextPrice) => prevPrice + nextPrice);
+        this.total = this.calcTotalPrice(data);
       }
     });
     console.log('this.products: ', this.products);
     this.calcTotalItems();
+  }
+
+  calcTotalPrice(products: Product[]): number | undefined {
+    return products
+      .map((prod) => prod.price)
+      .reduce((prevPrice, nextPrice) => prevPrice + nextPrice);
   }
 
   deSelectItems() {
@@ -54,7 +58,7 @@ export class ShoppingCartComponent implements OnInit {
     product = this.products?.find((prod, index) => prod.id === id);
     if (product) {
       product.quantityOrdered!++;
-      this.total += product.price!;
+      this.total! += product.price!;
     }
     this.calcTotalItems();
   }
@@ -63,13 +67,19 @@ export class ShoppingCartComponent implements OnInit {
     product = this.products?.find((prod, index) => prod.id === id);
     if (product) {
       product.quantityOrdered!--;
-      this.total -= product.price!;
+      this.total! -= product.price!;
     }
     this.calcTotalItems();
   }
 
   calcTotalItems() {
     if (this.products && this.products?.length > 0) {
+      this.shoppingCartService.addItemsToCart(this.products);
+      this.shoppingCartService.subjectProducts.subscribe((data: Product[]) => {
+        this.total = data
+          .map((prod) => prod.quantityOrdered! * prod.price)
+          .reduce((prevSubTotal, nextSubTotal) => prevSubTotal + nextSubTotal);
+      });
       this.totalItemsOrdered = this.products
         ?.map((product) => product.quantityOrdered)
         .reduce((prevQuantity, nextQuantiy) => prevQuantity! + nextQuantiy!);
