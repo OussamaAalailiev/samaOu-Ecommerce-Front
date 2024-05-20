@@ -1,0 +1,13 @@
+<section class="bg-success d-flex justify-content-between align-items-center">
+  <span matSnackBarLabel>{{ data }}</span>
+  <span matSnackBarActions>
+    <button
+      mat-button
+      matSnackBarAction
+      (click)="snackBarRef.dismissWithAction()"
+      mat-button
+    >
+      close
+    </button>
+  </span>
+</section>

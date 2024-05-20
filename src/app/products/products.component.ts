@@ -7,6 +7,8 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
 import { ShoppingCartService } from '../services/shopping-cart/shopping-cart.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SuccessSnackbarComponent } from '../success-snackbar/success-snackbar.component';
 
 @Component({
   selector: 'app-products',
@@ -47,10 +49,16 @@ export class ProductsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private shoppingCartService: ShoppingCartService
+    private shoppingCartService: ShoppingCartService,
+    private _snackbar: MatSnackBar
   ) {}
 
   addProductToCart(product: Product) {
     this.shoppingCartService.addItemToCart(product);
+    const successMsg: string = `${product.name} added successfully!`;
+    /* this._snackbar.open(`${product.name} added successfully!`, 'dismiss'); */
+    this._snackbar.openFromComponent(SuccessSnackbarComponent, {
+      data: successMsg,
+    });
   }
 }

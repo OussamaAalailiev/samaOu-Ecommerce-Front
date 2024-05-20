@@ -17,8 +17,10 @@
         <li>sqdgfqsgd</li>
       </ul> -->
     </div>
-    <div class="row flex-column col-sm-10">
-      <p class="fs-4 fw-bold">Results :</p>
+    <div class="row flex-column col-sm-10 bg-light">
+      <p class="" style="font-size: 1rem; font-weight: 700">
+        {{ products[0].category?.title }} Products :
+      </p>
       <div class="card mb-3" *ngFor="let product of products">
         <div class="row g-0">
           <div class="col-sm-12 col-md-6 col-lg-4">
@@ -35,7 +37,7 @@
             <div class="card-body">
               <!-- <h5 class="card-title">Card title</h5> -->
               <div class="card-text">
-                <p style="margin-bottom: -0rem" class="text-truncate fw-bold">
+                <p style="margin-bottom: -0rem" class="text-truncate fw-medium">
                   {{ product.description }}
                 </p>
                 <div class="d-flex justify-content-start mt-2 mb-0">
