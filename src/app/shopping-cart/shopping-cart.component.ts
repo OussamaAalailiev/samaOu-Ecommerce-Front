@@ -1,5 +1,5 @@
 import { CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../services/shopping-cart/shopping-cart.service';
 import { Product } from '../model/Product';
 import { MatButtonModule } from '@angular/material/button';
@@ -29,14 +29,20 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit(): void {
     this.shoppingCartService.subjectProducts.subscribe((data) => {
       this.products = data;
-      console.log('data: ', data);
       if (data.length > 0) {
         this.total = this.calcTotalPrice(data);
       }
     });
-    console.log('this.products: ', this.products);
+    console.log('ngOnInit() this.products: ', this.products);
     this.calcTotalItems();
   }
+
+  /* ngOnDestroy(): void {
+    if (this.products && this.products.length > 0) {
+      console.log('ngOnDestroy() this.products: ', this.products);
+      this.shoppingCartService.subjectProducts.next(this.products);
+    }
+  } */
 
   calcTotalPrice(products: Product[]): number | undefined {
     return products

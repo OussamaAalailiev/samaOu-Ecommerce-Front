@@ -2,24 +2,30 @@
   <h2 class="ms-3 mt-3 p-2 bg-light text-dark fw-bold">Nos Catégories</h2>
   <section class="grid-4-col">
     <section *ngFor="let category of categories" class="card position-relative">
-      <p class="cardTitle">{{ category.title }}</p>
-      <img class="cardImage" src="{{ category.image }}" alt="food image" />
-      <div class="">
-        <p class="card-text mt-1 mb-4">
-          {{ category.description }}
-        </p>
-        <div class="d-flex justify-content-between">
-          <a
-            [routerLink]="['/products', category.id]"
-            class="d-block myLink-a position-absolute bottom--start"
-            >See more</a
-          >
-          <span
-            class="card-text mt-1 fw-bold badge text-bg-danger position-absolute bottom--end"
-            >{{ category.promotion }}% Off!</span
-          >
+      <a
+        [routerLink]="['/products', category.id]"
+        class="text-decoration-none"
+        style="font-family: inherit; color: inherit"
+      >
+        <p class="cardTitle">{{ category.title }}</p>
+        <img class="cardImage" src="{{ category.image }}" alt="food image" />
+        <div class="">
+          <p class="card-text mt-1 mb-4">
+            {{ category.description }}
+          </p>
+          <div class="d-flex justify-content-between">
+            <a
+              [routerLink]="['/products', category.id]"
+              class="d-block myLink-a position-absolute bottom--start"
+              >See more</a
+            >
+            <span
+              class="card-text mt-1 fw-bold badge text-bg-danger position-absolute bottom--end"
+              >{{ category.promotion }}% Off!</span
+            >
+          </div>
         </div>
-      </div>
+      </a>
     </section>
   </section>
 </section>

@@ -27,14 +27,14 @@ export class CategoriesLessPricesComponent {
 
     this.responsiveOptions = [
       {
-        breakpoint: '1199px',
-        numVisible: 5,
-        numScroll: 1,
+        breakpoint: '992px',
+        numVisible: 4,
+        numScroll: 4,
       },
       {
         breakpoint: '991px',
         numVisible: 2,
-        numScroll: 1,
+        numScroll: 2,
       },
       {
         breakpoint: '767px',

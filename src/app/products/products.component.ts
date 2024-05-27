@@ -8,8 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
 import { ShoppingCartService } from '../services/shopping-cart/shopping-cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SuccessSnackbarComponent } from '../success-snackbar/success-snackbar.component';
-
+/* import { SuccessSnackbarComponent } from '../success-snackbar/success-snackbar.component';
+ */
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -20,10 +20,13 @@ import { SuccessSnackbarComponent } from '../success-snackbar/success-snackbar.c
 export class ProductsComponent implements OnInit {
   /* for initialization tasks when the component is created. */
   products!: Product[] | undefined;
-  /* value!: number; */ /* Rating value. */
   price: number = 151351;
   categoryIdFromRoute: number | undefined;
   numberOfRatings: number = Math.floor(Math.random() * 5000);
+  isProductAddedToCart: boolean = false;
+  successMsgAlert: string = '';
+  errorMsgAlert: string = '';
+  productNameToCart: string | undefined;
 
   ngOnInit(): void {
     //categoryId.
@@ -55,10 +58,14 @@ export class ProductsComponent implements OnInit {
 
   addProductToCart(product: Product) {
     this.shoppingCartService.addItemToCart(product);
-    const successMsg: string = `${product.name} added successfully!`;
+    const successMsg: string = ` added successfully!`;
+    this.productNameToCart = product.name;
+    //Success Alert If Product added successfully:
+    this.isProductAddedToCart = true;
+    this.successMsgAlert = successMsg;
     /* this._snackbar.open(`${product.name} added successfully!`, 'dismiss'); */
-    this._snackbar.openFromComponent(SuccessSnackbarComponent, {
+    /* this._snackbar.openFromComponent(SuccessSnackbarComponent, {
       data: successMsg,
-    });
+    }); */
   }
 }

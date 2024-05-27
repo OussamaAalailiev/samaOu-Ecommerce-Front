@@ -3,12 +3,14 @@
     <p class="m-0" style="font-size: 1.5rem; font-weight: 500">Shopping Cart</p>
     <div class="my-0 mb-1">
       <a class="btn-outline-primary" (click)="deSelectItems()">
-        <label for="deselect--item" *ngIf="selectedItems">{{
-          selectedLabel
-        }}</label>
+        <label for="deselect--item" *ngIf="selectedItems"
+          ><a style="cursor: pointer">{{ selectedLabel }}</a></label
+        >
         <label for="deselect--item" *ngIf="!selectedItems"
-          ><span class="text-dark">No items selected.</span>
-          {{ notSelectedLabel }}</label
+          ><a style="cursor: pointer">
+            <span class="text-dark">No items selected.</span>
+            {{ notSelectedLabel }}
+          </a></label
         >
       </a>
     </div>

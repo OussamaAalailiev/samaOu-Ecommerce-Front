@@ -83,92 +83,28 @@
                   </button>
                 </div>
               </div>
-              <!-- <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p> -->
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-sm-4">
-            <a href="#">
-              <img
-                src="../../assets/food.jpg"
-                class="img-fluid rounded-start"
-                alt="..."
-              />
-            </a>
-          </div>
-          <div class="col-sm-8">
-            <div class="card-body">
-              <div class="card-text">
-                <p style="margin-bottom: -0rem">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="m-0">
-                  <small class="text-muted">3k+ bought in last month</small>
-                </p>
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  style="border-radius: 1.5rem; font-size: 0.8rem"
-                >
-                  Add to cart
-                </button>
-              </div>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-sm-4">
-            <a href="#">
-              <img
-                src="../../assets/food.jpg"
-                class="img-fluid rounded-start"
-                alt="..."
-              />
-            </a>
-          </div>
-          <div class="col-sm-8">
-            <div class="card-body">
-              <div class="card-text">
-                <p style="margin-bottom: -0rem">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="m-0">
-                  <small class="text-muted">3k+ bought in last month</small>
-                </p>
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  style="border-radius: 1.5rem; font-size: 0.8rem"
-                >
-                  Add to cart
-                </button>
-              </div>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
+    <section
+      *ngIf="isProductAddedToCart"
+      style="position: fixed; top: 90%; left: 25%; width: 50%"
+    >
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ productNameToCart }}</strong
+        >&nbsp; {{ successMsgAlert }}
+        <!-- <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button> -->
+      </div>
+    </section>
   </div>
 </section>
 <ng-template #noData>
-  <p style="height: 80vh" class="text-danger fw-bold text-center p-5">
-    No Products was found!
-  </p>
+  <p class="text-danger fw-bold text-center p-5">No Products was found!</p>
 </ng-template>
