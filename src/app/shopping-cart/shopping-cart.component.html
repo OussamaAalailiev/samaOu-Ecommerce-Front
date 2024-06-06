@@ -1,4 +1,8 @@
-<section class="container my-3 bg-light" style="min-height: 100vh">
+<section
+  *ngIf="products?.length! > 0; else noProductTemplate"
+  class="container my-3 bg-light"
+  style="min-height: 100vh"
+>
   <div class="d-flex flex-column">
     <p class="m-0" style="font-size: 1.5rem; font-weight: 500">Shopping Cart</p>
     <div class="my-0 mb-1">
@@ -80,6 +84,14 @@
               class="d-block pi pi-plus px-2 add--decrease--btn add--btn"
               (click)="addQuantity(product.id)"
             ></i>
+            <span class="align-self-center ms-2 text-secondary">|</span>
+            <!-- <button class=""> -->
+            <span
+              class="align-self-center ms-2 myLink-a"
+              (click)="deleteItemCart(product)"
+              ><small class="hover">Delete</small></span
+            >
+            <!-- </button> -->
           </div>
         </div>
       </div>
@@ -100,3 +112,11 @@
     <p class="fw-bold">{{ total | currency : "MAD " }}</p>
   </section>
 </section>
+<ng-template #noProductTemplate>
+  <section
+    class="container my-3 bg-light text-center p-5"
+    style="min-height: 100vh; font-weight: 500"
+  >
+    Your shopping Cart is empty <i class="bi-cart3"></i>
+  </section>
+</ng-template>

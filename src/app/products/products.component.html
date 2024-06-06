@@ -88,10 +88,7 @@
         </div>
       </div>
     </div>
-    <section
-      *ngIf="isProductAddedToCart"
-      style="position: fixed; top: 90%; left: 25%; width: 50%"
-    >
+    <section *ngIf="isProductAddedToCart" class="my-alert--success">
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{ productNameToCart }}</strong
         >&nbsp; {{ successMsgAlert }}

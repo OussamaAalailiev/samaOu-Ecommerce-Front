@@ -21,7 +21,7 @@ section .card {
   font-size: 1.3rem;
   font-weight: 700;
 }
-.myLink-a:visited,
+/* .myLink-a:visited,
 .myLink-a:link {
   text-decoration: none;
 }
@@ -29,7 +29,7 @@ section .card {
 .myLink-a:active {
   text-decoration: underline;
   color: orange;
-}
+} */
 .bottom--start {
   left: 0.5rem;
   bottom: 0.5rem;

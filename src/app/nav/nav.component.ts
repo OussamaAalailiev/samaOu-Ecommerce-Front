@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SignupComponent } from '../signup/signup.component';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
 import { ShoppingCartService } from '../services/shopping-cart/shopping-cart.service';
+import { NgClass } from '@angular/common';
 export interface DialogData {
   animal: string;
   name: string;
@@ -31,6 +32,7 @@ export interface DialogData {
     MatInputModule,
     FormsModule,
     MatButtonModule,
+    NgClass,
   ],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
@@ -65,8 +67,8 @@ export class NavComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(SignupComponent, {
       data: { name: this.name },
-      width: '500px',
-      height: '500px',
+      width: '400px',
+      maxHeight: '650px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {

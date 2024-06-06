@@ -1,15 +1,116 @@
-<p>signup works!</p>
-<!-- <h2 mat-dialog-title>Hi {{ data.name }}</h2>
-<mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput [(ngModel)]="data.animal" />
-  </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>
-    Ok
-  </button>
-</mat-dialog-actions> -->
+<h4 class="text-center">Signup for more!</h4>
+<section class="container">
+  <form
+    [formGroup]="signUpFormBuilder"
+    (ngSubmit)="onSubmit()"
+    class="d-flex flex-column"
+  >
+    <div class="mb-1">
+      <label for="email" class="form-label">Email: </label>
+      <input
+        class="form-control"
+        type="email"
+        id="email"
+        formControlName="email"
+      />
+      <div
+        *ngIf="email && email.invalid && (email.dirty || email.touched)"
+        class="text-danger m-0"
+      >
+        <div *ngIf="email.hasError('required')">Email is required.</div>
+        <div *ngIf="email.hasError('minlength')">
+          Email should have at least 11 characters.
+        </div>
+        <div *ngIf="email.hasError('maxlength')">
+          Email should have at max 150 characters.
+        </div>
+      </div>
+    </div>
+    <div class="mb-1">
+      <label for="gender" class="form-label">Gender: </label>
+      <select class="form-select" formControlName="gender">
+        <option [value]="null" selected disabled>Select your gender</option>
+        <option *ngFor="let gender of genderArr" [value]="gender">
+          {{ gender }}
+        </option>
+      </select>
+      <div
+        class="text-danger m-0"
+        *ngIf="gender && gender.invalid && (gender.dirty || gender.touched)"
+      >
+        <div *ngIf="gender.hasError('required')">Gender is required.</div>
+      </div>
+    </div>
+    <div class="mb-1">
+      <label for="age" class="form-label">Age: </label>
+      <input
+        class="form-control"
+        type="number"
+        id="age"
+        formControlName="age"
+      />
+      <div
+        class="text-danger m-0"
+        *ngIf="age && age.invalid && (age.dirty || age.touched)"
+      >
+        <div *ngIf="age.hasError('required')">Age is required.</div>
+        <div *ngIf="age.hasError('min')">
+          Age should have at least 12 and above.
+        </div>
+      </div>
+    </div>
+    <div class="mb-1">
+      <label for="password" class="form-label">New Password: </label>
+      <input
+        class="form-control"
+        type="password"
+        id="password"
+        formControlName="newPassword"
+      />
+      <div
+        class="text-danger m-0"
+        *ngIf="
+          newPassword &&
+          newPassword.invalid &&
+          (newPassword.dirty || newPassword.touched)
+        "
+      >
+        <div *ngIf="newPassword.hasError('required')">
+          Password is required.
+        </div>
+      </div>
+    </div>
+    <div class="mb-1">
+      <label for="confirmPassword" class="form-label">New Password: </label>
+      <input
+        class="form-control"
+        type="password"
+        id="confirmPassword"
+        formControlName="confirmNewPassword"
+      />
+      <div
+        class="text-danger m-0"
+        *ngIf="
+          confirmNewPassword &&
+          confirmNewPassword.invalid &&
+          (confirmNewPassword.dirty || confirmNewPassword.touched)
+        "
+      >
+        <div *ngIf="confirmNewPassword.hasError('required')">
+          Password confirmation is required.
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success mb-1" [disabled]="!signUpFormBuilder.valid">
+      Submit
+    </button>
+    <button
+      class="btn btn-warning mb-1"
+      type="button"
+      (click)="onUpdate()"
+      [disabled]="!signUpFormBuilder.valid"
+    >
+      Update Profile
+    </button>
+  </form>
+</section>
