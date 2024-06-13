@@ -7,7 +7,7 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
-import { DialogData } from '../nav/nav.component';
+import { DialogData } from '../nav.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';

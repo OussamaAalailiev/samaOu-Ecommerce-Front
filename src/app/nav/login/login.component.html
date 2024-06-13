@@ -1,0 +1,91 @@
+<section class="container position-relative">
+  <h4 class="text-center my-3 p-2">Déjà membre! Fais <strong>Login</strong></h4>
+  <form
+    class="d-flex flex-column"
+    [formGroup]="loginFormBuilder"
+    (ngSubmit)="onSubmitLogin()"
+  >
+    <div class="mb-2">
+      <label for="emailLogin" class="form-label">Email:</label>
+      <input
+        id="emailLogin"
+        type="email"
+        class="form-control"
+        formControlName="email"
+      />
+      <div
+        *ngIf="email && email.invalid && (email.dirty || email.touched)"
+        class="text-danger m-0"
+      >
+        <div *ngIf="email.hasError('required')">
+          <small>Email est requis.</small>
+        </div>
+        <div *ngIf="email.hasError('minlength')">
+          <small>Email doit avoir au minimum 11 charactères.</small>
+        </div>
+        <div *ngIf="email.hasError('email')">
+          <small>Email n'est pas valide.</small>
+        </div>
+        <div *ngIf="email.hasError('maxlength')">
+          <small>Email doit avoir au maximum 150 charactères.</small>
+        </div>
+      </div>
+    </div>
+    <div class="mb-2">
+      <label for="passwordLogin" class="form-label">Password:</label>
+      <input
+        id="passwordLogin"
+        type="password"
+        class="form-control"
+        formControlName="password"
+      />
+      <div
+        class="text-danger m-0"
+        *ngIf="
+          password && password.invalid && (password.dirty || password.touched)
+        "
+      >
+        <div *ngIf="password.hasError('required')">
+          <small>Mot de Passe est requis</small>
+        </div>
+      </div>
+    </div>
+    <div class="mb-2 d-flex align-items-center">
+      <label for="rememberMeLogin" class="form-check-label"
+        >Remember Me:&nbsp;</label
+      >
+      <input
+        id="rememberMeLogin"
+        type="checkbox"
+        class="form-check form-check-input"
+        formControlName="rememberMe"
+      />
+    </div>
+    <button class="mb-2 btn btn-primary" [disabled]="!loginFormBuilder.valid">
+      Login
+    </button>
+    <div class="d-flex p-1 mb-2">
+      <hr
+        class="bg-secondary border-2 border-top border-secondary"
+        style="width: 45%"
+      />
+      <span class="d-block">&nbsp;Ou&nbsp;</span>
+      <hr
+        class="bg-secondary border-2 border-top border-secondary"
+        style="width: 45%"
+      />
+    </div>
+    <!-- <div class="d-flex mb-1"> -->
+    <button type="button" class="btn btn-outline-dark mb-2">
+      <i class="fa fa-google"></i> Google
+    </button>
+    <!-- </div> -->
+  </form>
+  <button
+    class="btn btn-close close--dialog--btn--absolute"
+    type="button"
+    (click)="onNoClick()"
+  >
+    <!-- <i class="btn btn-close"></i> -->
+  </button>
+</section>

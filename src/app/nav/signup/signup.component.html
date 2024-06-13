@@ -1,0 +1,155 @@
+<section class="position-relative">
+  <h4 class="text-center">Signup for more!</h4>
+  <section class="container">
+    <form
+      [formGroup]="signUpFormBuilder"
+      (ngSubmit)="onSubmit()"
+      class="d-flex flex-column"
+    >
+      <div class="mb-1">
+        <label for="email" class="form-label">Email: </label>
+        <input
+          class="form-control"
+          type="email"
+          id="email"
+          formControlName="email"
+        />
+        <div
+          *ngIf="email && email.invalid && (email.dirty || email.touched)"
+          class="text-danger m-0"
+        >
+          <div *ngIf="email.hasError('required')">
+            <small>Email is required.</small>
+          </div>
+          <div *ngIf="email.hasError('minlength')">
+            <small>Email should have at least 11 characters.</small>
+          </div>
+          <div *ngIf="email.hasError('email')">
+            <small>Email is not valid.</small>
+          </div>
+          <div *ngIf="email.hasError('maxlength')">
+            <small>Email should have at max 150 characters.</small>
+          </div>
+        </div>
+      </div>
+      <div class="mb-1 d-flex justify-content-between">
+        <div class="w-50">
+          <label for="gender" class="form-label">Gender: </label>
+          <select class="form-select" formControlName="gender">
+            <option [value]="null" selected disabled>Select your gender</option>
+            <option *ngFor="let gender of genderArr" [value]="gender">
+              {{ gender }}
+            </option>
+          </select>
+          <div
+            class="text-danger m-0"
+            *ngIf="gender && gender.invalid && (gender.dirty || gender.touched)"
+          >
+            <div *ngIf="gender.hasError('required')">
+              <small>Gender is required.</small>
+            </div>
+          </div>
+        </div>
+        <div class="w-25">
+          <label for="age" class="form-label">Age: </label>
+          <input
+            class="form-control"
+            type="number"
+            id="age"
+            formControlName="age"
+          />
+          <div
+            class="text-danger m-0"
+            *ngIf="age && age.invalid && (age.dirty || age.touched)"
+          >
+            <div *ngIf="age.hasError('required')">
+              <small>Age is required.</small>
+            </div>
+            <div *ngIf="age.hasError('min')">
+              <small>Age should have at least 12 and above.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <label for="password" class="form-label">New Password: </label>
+        <input
+          class="form-control"
+          type="password"
+          id="password"
+          formControlName="newPassword"
+        />
+        <div
+          class="text-danger m-0"
+          *ngIf="
+            newPassword &&
+            newPassword.invalid &&
+            (newPassword.dirty || newPassword.touched)
+          "
+        >
+          <div *ngIf="newPassword.hasError('required')">
+            <small>Password is required.</small>
+          </div>
+        </div>
+      </div>
+      <div class="mb-1">
+        <label for="confirmPassword" class="form-label"
+          >Confirm Password:
+        </label>
+        <input
+          class="form-control"
+          type="password"
+          id="confirmPassword"
+          formControlName="confirmNewPassword"
+        />
+        <div
+          class="text-danger m-0"
+          *ngIf="
+            confirmNewPassword &&
+            confirmNewPassword.invalid &&
+            (confirmNewPassword.dirty || confirmNewPassword.touched)
+          "
+        >
+          <div *ngIf="confirmNewPassword.hasError('required')">
+            <small>Password confirmation is required.</small>
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-primary mb-2"
+        [disabled]="!signUpFormBuilder.valid"
+      >
+        Register
+      </button>
+      <!-- <button
+      class="btn btn-warning mb-1"
+      type="button"
+      (click)="onUpdate()"
+      [disabled]="!signUpFormBuilder.valid"
+    >
+      Update Profile
+    </button> -->
+      <div class="d-flex">
+        <hr
+          class="bg-secondary border-2 border-top border-secondary"
+          style="width: 45%"
+        />
+        <span class="d-block">&nbsp;Ou&nbsp;</span>
+        <hr
+          class="bg-secondary border-2 border-top border-secondary"
+          style="width: 45%"
+        />
+      </div>
+      <button type="button" class="btn btn-outline-dark mb-1">
+        <i class="fa fa-google"></i> Google
+      </button>
+    </form>
+  </section>
+  <button
+    class="btn btn-close close--dialog--btn--absolute"
+    type="button"
+    (click)="onNoClick()"
+  >
+    <!-- <i class="btn btn-close"></i> -->
+  </button>
+</section>

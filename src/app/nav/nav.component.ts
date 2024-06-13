@@ -14,10 +14,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { SignupComponent } from '../signup/signup.component';
+import { SignupComponent } from './signup/signup.component';
 import { ShoppingCartComponent } from '../shopping-cart/shopping-cart.component';
 import { ShoppingCartService } from '../services/shopping-cart/shopping-cart.service';
 import { NgClass } from '@angular/common';
+import { LoginComponent } from './login/login.component';
 export interface DialogData {
   animal: string;
   name: string;
@@ -75,5 +76,17 @@ export class NavComponent implements OnInit {
       console.log('The dialog was closed ', result);
       this.animal = result;
     });
+  }
+
+  openLoginDialog(): void {
+    const dialogRef = this.dialog.open(LoginComponent, {
+      maxWidth: '400px',
+      maxHeight: '600px',
+    });
+
+    /* dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed ', result);
+      this.animal = result;
+    }); */
   }
 }
