@@ -104,7 +104,8 @@ export class ShoppingCartComponent implements OnInit {
   deleteItemCart(product: Product) {
     if (this.products) {
       this.products = this.products.filter((prod) => prod.id !== product.id);
-      this.shoppingCartService.addItemsToCart(this.products);
+      //this.shoppingCartService.addItemsToCart(this.products);
+      this.calcTotalItems();
     }
   }
 }

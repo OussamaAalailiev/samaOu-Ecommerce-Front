@@ -21,10 +21,17 @@ export class CategoriesLessPricesComponent {
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
+    this.getLessPriceProducts();
+    this.initCarouselResponsiveMediaQueries();
+  }
+
+  getLessPriceProducts(): void {
     this.productService.getProductsSmall().then((products) => {
       this.products = products;
     });
+  }
 
+  initCarouselResponsiveMediaQueries(): void {
     this.responsiveOptions = [
       {
         breakpoint: '992px',

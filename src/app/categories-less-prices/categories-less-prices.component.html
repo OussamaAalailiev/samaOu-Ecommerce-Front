@@ -4,53 +4,6 @@
       Produits moin de 100.00
       <small class="fs-6" style="margin-left: -0.5rem">DH</small>
     </h2>
-    <!-- <p-carousel
-    [value]="products!"
-    [numVisible]="3"
-    [numScroll]="1"
-    [responsiveOptions]="responsiveOptions"
-  >
-    <ng-template pTemplate="header">
-      <p>Header content</p>
-    </ng-template>
-    <ng-template let-product pTemplate="item">
-      <div class="border-1 surface-border border-round m-2 p-3">
-        <div class="mb-3">
-          <div class="relative mx-auto">
-            <img
-              src="https://primefaces.org/cdn/primeng/images/demo/product/{{
-                product.image
-              }}"
-              [alt]="product.name"
-              class="w-full border-round"
-            />
-            <p-tag
-              [value]="product.inventoryStatus"
-              [severity]="getSeverity(product.inventoryStatus)"
-              class="absolute"
-              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
-            />
-          </div>
-        </div>
-        <div class="mb-3 font-medium">
-          {{ product.name }}
-        </div>
-        <div class="flex justify-content-between align-items-center">
-          <div class="mt-0 font-semibold text-xl">
-            {{ "$" + product.price }}
-          </div>
-          <span>
-            <p-button icon="pi pi-heart" severity="secondary" outlined="true" />
-            <p-button icon="pi pi-shopping-cart" styleClass="ml-2" />
-          </span>
-        </div>
-      </div>
-    </ng-template>
-    <ng-template pTemplate="footer">
-      <p>Footer content</p>
-    </ng-template>
-  </p-carousel> -->
-
     <p-carousel
       [value]="products!"
       [numVisible]="4"
@@ -75,29 +28,6 @@
             /> -->
             </div>
           </div>
-          <!-- <div class="p-1">
-          <div class="mb-3 font-medium fw-medium">
-            {{ product.name }}
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="mt-0 font-semibold text-xl fw-bold">
-              {{ "$" + product.price }}
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-              <p-button
-                icon="pi pi-heart"
-                severity="secondary"
-                outlined="true"
-                styleClass="p-2 text-bg-light text-secondary border border-secondary"
-              />
-              <p-button
-                icon="pi pi-shopping-cart"
-                styleClass="ms-2 p-2"
-                class="align-self-end me-0"
-              />
-            </div>
-          </div>
-        </div> -->
           <a href="#" class="stretched-link"></a>
         </div>
       </ng-template>

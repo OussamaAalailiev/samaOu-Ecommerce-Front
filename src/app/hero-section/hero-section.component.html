@@ -5,7 +5,8 @@
     class="hero-img"
   />
 </section> -->
-<section class="hero-section">
+
+<!-- <section class="hero-section">
   <div></div>
   <div
     id="carouselExampleDark"
@@ -37,7 +38,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="5000">
         <img
-          src="../../assets/ECommerce-image- 2023-.jpg"
+          src="../../assets/shopping online 2.webp"
           class="hero-img d-block m-auto"
           alt="..."
         />
@@ -88,5 +89,38 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-</section>
+</section> -->
+<div class="card">
+  <p-galleria
+    [value]="images"
+    [showItemNavigators]="true"
+    [showThumbnails]="false"
+    [showIndicators]="true"
+    [showIndicatorsOnItem]="true"
+    [responsiveOptions]="responsiveOptions"
+    [containerStyle]="{
+      'margin-top': '1rem',
+      margin: 'auto',
+      overflow: 'hidden',
+      
+    }"
+  >
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla fugiat
+      beatae, officiis ullam et animi fugit ex, eaque ut libero nostrum nobis
+      incidunt cum illo deleniti, inventore aperiam expedita accusamus!
+    </p>
+    <ng-template pTemplate="item" let-item>
+      <img
+        [src]="item.itemImageSrc"
+        style="width: 100%; display: block; margin-top: 2rem"
+      />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="grid grid-nogutter justify-content-center">
+        <img [src]="item.thumbnailImageSrc" style="display: block" />
+      </div>
+    </ng-template>
+  </p-galleria>
+</div>
 <app-categories-container></app-categories-container>

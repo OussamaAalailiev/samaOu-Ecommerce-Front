@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { NgFor, NgIf } from '@angular/common';
+import { LoginService } from '../../security/auth/login.service';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-signup',
@@ -38,7 +40,8 @@ export class SignupComponent {
   constructor(
     public dialogRef: MatDialogRef<SignupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private loginService: LoginService
   ) {}
 
   /**
@@ -71,6 +74,18 @@ export class SignupComponent {
   onSubmit() {
     console.warn(this.signUpFormBuilder.value);
     if (this.signUpFormBuilder.valid) {
+      const user: User = new User();
+      //user.setEmail(this.signUpFormBuilder.value.email);
+      user.email = this.signUpFormBuilder.value.email
+        ? this.signUpFormBuilder.value.email
+        : '';
+      user.password = this.signUpFormBuilder.value.newPassword
+        ? this.signUpFormBuilder.value.newPassword
+        : '';
+      this.loginService.createUser(user).subscribe({
+        next: (user) => alert(user),
+        error: (err) => alert(err),
+      });
       this.dialogRef.close();
     }
   }

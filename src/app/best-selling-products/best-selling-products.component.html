@@ -1,62 +1,35 @@
-<section class="mt-3 p-3 best-selling-container mx-2">
-  <h2 class="text-dark display-5">Les Vêtements les plus vendus</h2>
-  <div class="container-fluid">
-    <div class="row">
-      <section class="card col-sm-12 col-md-3 g-3">
-        <a href="#">
-          <img
-            class="cardImage"
-            src="./../../assets/best-selling-clothes/women clothes underware.webp"
-            alt="women clothes underware image"
-          />
-        </a>
-      </section>
-      <section class="card col-sm-12 col-md-3 g-3">
-        <a href="#">
-          <img
-            class="cardImage"
-            src="./../../assets/best-selling-clothes/women flower clothes.jpeg"
-            alt="women flower clothes image"
-          />
-        </a>
-      </section>
-      <section class="card col-sm-12 col-md-3 g-3">
-        <a href="#">
-          <img
-            class="cardImage"
-            src="./../../assets/best-selling-clothes/men clothes.webp"
-            alt="men clothes image"
-          />
-        </a>
-      </section>
-      <section class="card col-sm-12 col-md-3 g-3">
-        <a href="#">
-          <img
-            class="cardImage"
-            src="./../../assets/best-selling-clothes/men clothes 2.jpeg"
-            alt="men clothes image"
-          />
-        </a>
-      </section>
-      <!-- <section class="card col-sm-12 col-md-3 g-3">
-        <a href="#">
-          <img
-            class="cardImage"
-            src="./../../assets/best-selling-clothes/men clothes shoe 3.jpeg"
-            alt="men shoe image"
-          />
-        </a>
-      </section> -->
-      <!-- <section class="card col-sm-12 col-md-3  g-3">
-        <a href="#">
-          <img
-            class="cardImage"
-            src="./../../assets/best-selling-clothes/women clothes chemise.jpeg"
-            alt="women clothes chemise image"
-          />
-        </a>
-      </section> -->
-    </div>
-  </div>
+<section class="mt-5 mx-2">
+  <section style="background-color: #fff">
+    <h2 class="pt-3 ms-5">Vêtements les plus vendus</h2>
+    <p-carousel
+      [value]="products!"
+      [numVisible]="4"
+      [numScroll]="4"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-product pTemplate="item">
+        <div class="card position-relative ms-1 p-0">
+          <!-- <div class="mb-3"> -->
+          <div class="">
+            <div class="p-0">
+              <img
+                src="../../assets/best-selling-clothes/{{ product.image }}"
+                [alt]="product.name"
+                class="w-full border-round w-100"
+              />
+              <!-- <p-tag
+              [value]="product.inventoryStatus"
+              [severity]="getSeverity(product.inventoryStatus)"
+              class="position-absolute"
+              [ngStyle]="{ 'left.px': 5, 'top.px': 5 }"
+            /> -->
+            </div>
+          </div>
+          <a href="#" class="stretched-link"></a>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </section>
 </section>
+
 <app-our-clients></app-our-clients>
