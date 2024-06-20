@@ -153,3 +153,6 @@
     <!-- <i class="btn btn-close"></i> -->
   </button>
 </section>
+<div class="card w-100" *ngIf="messages">
+  <p-messages [(value)]="messages" [enableService]="false" />
+</div>

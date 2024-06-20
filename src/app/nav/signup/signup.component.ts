@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgFor, NgIf } from '@angular/common';
 import { LoginService } from '../../security/auth/login.service';
 import { User } from '../../model/user';
+import { Message } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
 
 @Component({
   selector: 'app-signup',
@@ -30,12 +32,14 @@ import { User } from '../../model/user';
     ReactiveFormsModule,
     NgFor,
     NgIf,
+    MessagesModule,
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })
 export class SignupComponent {
   genderArr: string[] = ['Male', 'Female', 'Other'];
+  messages: Message[] | undefined;
 
   constructor(
     public dialogRef: MatDialogRef<SignupComponent>,
@@ -83,11 +87,35 @@ export class SignupComponent {
         ? this.signUpFormBuilder.value.newPassword
         : '';
       this.loginService.createUser(user).subscribe({
-        next: (user) => alert(user),
+        next: (user) => {
+          if (user) {
+            this.messages = [
+              {
+                severity: 'success',
+                detail: `${user.email.slice(
+                  0,
+                  user.email.indexOf('@')
+                )} is registered successfully!`,
+              },
+            ];
+            this.closeDialogOnSuccess();
+          } else {
+            this.messages = [
+              {
+                severity: 'error',
+                detail: `User email is already in use, try another email!`,
+              },
+            ];
+          }
+        },
         error: (err) => alert(err),
       });
-      this.dialogRef.close();
+      //this.dialogRef.close();
     }
+  }
+
+  closeDialogOnSuccess() {
+    setTimeout(() => this.dialogRef.close(), 1500);
   }
 
   onUpdate() {
