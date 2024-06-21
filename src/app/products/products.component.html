@@ -1,109 +1,145 @@
-<section class="products" *ngIf="products && products.length > 0; else noData">
-  <div class="row container-fluid pt-3 pb-3">
-    <div class="col-sm-2">
-      <!-- <ul class="list-unstyled">
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-        <li>sqdgfqsgd</li>
-      </ul> -->
-    </div>
-    <div class="row flex-column col-sm-10 bg-light">
-      <p class="" style="font-size: 1rem; font-weight: 700">
-        {{ products[0].category?.title }} Products :
-      </p>
-      <div class="card mb-3" *ngFor="let product of products">
-        <div class="row g-0">
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <a href="#">
-              <img
-                href="#"
-                [src]="product.imageFileName"
-                class="img-fluid card-img w-100"
-                alt="..."
-              />
-            </a>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-8">
-            <div class="card-body">
-              <!-- <h5 class="card-title">Card title</h5> -->
-              <div class="card-text">
-                <p style="margin-bottom: -0rem" class="text-truncate fw-medium">
-                  {{ product.description }}
-                </p>
-                <div class="d-flex justify-content-start mt-2 mb-0">
-                  <p-rating
-                    class="align-self-center"
-                    [(ngModel)]="product.rating"
-                    [cancel]="false"
-                  />
-                  <!-- pi-chevron-down -->
-                  <i
-                    class="pi pi-chevron-down ms-2 align-self-center"
-                    style="font-size: 0.75rem"
-                  ></i>
-                  <p class="align-self-center ms-1 mb-2">
-                    {{ numberOfRatings }}
+<!-- <section class="products" *ngIf="products && products.length > 0; else noData"> -->
+<section [ngSwitch]="appState">
+  <!-- Spinner for Data Loading -->
+  <div
+    class="card flex justify-content-center text-center"
+    *ngSwitchCase="'LOADING'"
+    style="height: 50vh"
+  >
+    <p-progressSpinner ariaLabel="loading" />
+  </div>
+  <section class="products" *ngSwitchCase="'LOADED'" style="height: auto">
+    <div
+      class="row container-fluid pt-3 pb-3"
+      *ngIf="products && products.length > 0"
+    >
+      <div class="col-sm-2">
+        <!-- <ul class="list-unstyled">
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+          <li>sqdgfqsgd</li>
+        </ul> -->
+      </div>
+      <div class="row flex-column col-sm-10 bg-light">
+        <p class="" style="font-size: 1rem; font-weight: 700">
+          {{ products[0].category?.title }} Products :
+        </p>
+        <div class="card mb-3" *ngFor="let product of products">
+          <div class="row g-0">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <a href="#">
+                <img
+                  href="#"
+                  [src]="product.imageFileName"
+                  class="img-fluid card-img w-100"
+                  alt="..."
+                />
+              </a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-8">
+              <div class="card-body">
+                <!-- <h5 class="card-title">Card title</h5> -->
+                <div class="card-text">
+                  <p
+                    style="margin-bottom: -0rem"
+                    class="text-truncate fw-medium"
+                  >
+                    {{ product.description }}
                   </p>
-                </div>
-                <p class="m-0">
-                  <small class="text-muted">3k+ bought in last month</small>
-                </p>
-                <!-- Price -->
-                <div
-                  class="d-sm-block d-lg-flex flex-lg-row justify-content-lg-between align-items-lg-center d-xl-block"
-                >
-                  <div class="d-flex justify-content-start">
-                    <p class="me-2 fw-bold">
-                      {{
-                        product.price - product.price * 0.1
-                          | currency : "EUR" : true
-                      }}
-                    </p>
-                    <p class="text-decoration-line-through">
-                      {{ product.price | currency : "EUR" : true }}
+                  <div class="d-flex justify-content-start mt-2 mb-0">
+                    <p-rating
+                      class="align-self-center"
+                      [(ngModel)]="product.rating"
+                      [cancel]="false"
+                    />
+                    <!-- pi-chevron-down -->
+                    <i
+                      class="pi pi-chevron-down ms-2 align-self-center"
+                      style="font-size: 0.75rem"
+                    ></i>
+                    <p class="align-self-center ms-1 mb-2">
+                      {{ numberOfRatings }}
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    class="btn btn-warning flex-lg-grow-0"
-                    style="border-radius: 1.5rem; font-size: 0.8rem"
-                    (click)="addProductToCart(product)"
+                  <p class="m-0">
+                    <small class="text-muted">3k+ bought in last month</small>
+                  </p>
+                  <!-- Price -->
+                  <div
+                    class="d-sm-block d-lg-flex flex-lg-row justify-content-lg-between align-items-lg-center d-xl-block"
                   >
-                    Add to cart
-                  </button>
+                    <div class="d-flex justify-content-start">
+                      <p class="me-2 fw-bold">
+                        {{
+                          product.price - product.price * 0.1
+                            | currency : "EUR" : true
+                        }}
+                      </p>
+                      <p class="text-decoration-line-through">
+                        {{ product.price | currency : "EUR" : true }}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn btn-warning flex-lg-grow-0"
+                      style="border-radius: 1.5rem; font-size: 0.8rem"
+                      (click)="addProductToCart(product)"
+                    >
+                      Add to cart
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <section *ngIf="isProductAddedToCart" class="my-alert--success">
+        <div
+          class="alert alert-success alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>{{ productNameToCart }}</strong
+          >&nbsp; {{ successMsgAlert }}
+          <!-- <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button> -->
+        </div>
+      </section>
     </div>
-    <section *ngIf="isProductAddedToCart" class="my-alert--success">
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>{{ productNameToCart }}</strong
-        >&nbsp; {{ successMsgAlert }}
-        <!-- <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        ></button> -->
-      </div>
-    </section>
+  </section>
+  <div
+    *ngSwitchCase="'ERROR'"
+    class="text-danger text-center fw-bold pt-5"
+    style="height: 100vh"
+  >
+    <p>Error loading Products information.</p>
+    <i class="text-center pi pi-search" style="font-size: 2rem"></i>
+    <a [routerLink]="['/']" class="d-block text-center">
+      <button class="btn btn-primary mx-auto my-3" style="width: fit-content">
+        Go back Home
+      </button>
+    </a>
   </div>
 </section>
+<!-- </section> -->
+<!-- 
 <ng-template #noData>
   <p class="text-danger fw-bold text-center p-5" style="height: 50vh">
     No Products was found!
   </p>
-</ng-template>
+</ng-template> 
+-->

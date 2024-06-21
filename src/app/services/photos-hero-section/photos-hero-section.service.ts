@@ -11,7 +11,7 @@ export class PhotosHeroSectionService {
     return new Promise((resolve, reject) => {
       resolve([
         {
-          itemImageSrc: '../../assets/shopping online 2 - Copie.jpg',
+          itemImageSrc: '../../assets/shopping online 2 - Copie - Copie.jpg',
           thumbnailImageSrc:
             'https://primeng.org/images/galleria/galleria1s.jpg',
           alt: 'Description for Image 1',

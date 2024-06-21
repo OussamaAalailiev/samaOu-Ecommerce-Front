@@ -108,7 +108,14 @@ export class SignupComponent {
             ];
           }
         },
-        error: (err) => alert(err),
+        error: (err) => {
+          this.messages = [
+            {
+              severity: 'error',
+              detail: err,
+            },
+          ];
+        },
       });
       //this.dialogRef.close();
     }
