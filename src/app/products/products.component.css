@@ -4,3 +4,7 @@
   left: 5%;
   width: 90%;
 }
+.alert--success {
+  font-size: 0.5rem;
+  padding: 1rem;
+}

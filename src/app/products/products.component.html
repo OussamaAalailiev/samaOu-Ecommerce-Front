@@ -4,7 +4,7 @@
   <div
     class="card flex justify-content-center text-center"
     *ngSwitchCase="'LOADING'"
-    style="height: 50vh"
+    style="padding: 2rem"
   >
     <p-progressSpinner ariaLabel="loading" />
   </div>
@@ -104,21 +104,24 @@
           </div>
         </div>
       </div>
-      <section *ngIf="isProductAddedToCart" class="my-alert--success">
-        <div
-          class="alert alert-success alert-dismissible fade show"
-          role="alert"
-        >
-          <strong>{{ productNameToCart }}</strong
-          >&nbsp; {{ successMsgAlert }}
-          <!-- <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="alert"
-            aria-label="Close"
-          ></button> -->
-        </div>
-      </section>
+      <!-- <div class="card w-100" *ngIf="messages">
+        <p-messages
+          [(value)]="messages"
+          [enableService]="false"
+          [showTransitionOptions]="'500ms'"
+          [hideTransitionOptions]="'500ms'"
+          [closable]="true"
+        />
+      </div> -->
+      <div class="card flex justify-content-center">
+        <p-toast
+          [breakpoints]="{
+            '991px': { width: '40%' },
+            '767px': { width: '70%' },
+            '360px': { width: '80%' }
+          }"
+        />
+      </div>
     </div>
   </section>
   <div
@@ -135,11 +138,7 @@
     </a>
   </div>
 </section>
+<!-- <div class="card w-100" *ngIf="messages">
+  <p-messages [(value)]="messages" [enableService]="false" />
+</div> -->
 <!-- </section> -->
-<!-- 
-<ng-template #noData>
-  <p class="text-danger fw-bold text-center p-5" style="height: 50vh">
-    No Products was found!
-  </p>
-</ng-template> 
--->
